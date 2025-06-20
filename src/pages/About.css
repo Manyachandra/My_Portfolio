@@ -1,0 +1,66 @@
+/* src/pages/About.css */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-image: url("../assets/about-bg.png"); /* if you have a background image */
+  background-size: cover;
+  background-position: center;
+  padding-top: 60px; /* adjust to lift content higher */
+  padding-bottom: 40px;
+  color: white;
+}
+
+.about-content {
+  max-width: 1000px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-content .highlight {
+  color: #00ffff;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.cards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #121212;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: white;
+  font-size: 1.1rem;
+}

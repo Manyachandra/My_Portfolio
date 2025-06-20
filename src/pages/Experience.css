@@ -1,0 +1,149 @@
+.experience-section {
+  position: relative;
+  padding-top: 10px; /* Add spacing from top */
+  padding-bottom: 100px;
+  width: 100%;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.experience-title {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* Vertical center line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: #00f7ff;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+/* Timeline items */
+.timeline-item {
+  width: 50%;
+  padding: 20px 40px;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* Positioning */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Timeline circle dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background: #00f7ff;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item.left::before {
+  right: -10px;
+}
+
+.timeline-item.right::before {
+  left: -10px;
+}
+
+/* Card Content */
+.timeline-content {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* Card logo */
+.timeline-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays */
+.timeline-item:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::before {
+    left: 0;
+  }
+}
+
+

@@ -1,0 +1,83 @@
+
+.project-card {
+  width: 200px;               /* Playing card size */
+  height: 300px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.projects-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.projects-title {
+  text-align: center;
+  color: rgb(254, 252, 252);
+  margin-top: -20px; /* Moves it up */
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.project-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 12px 28px #0101004d;
+}
+
+.card-front {
+  background-color: #64819e;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-back {
+  background-color: #001f3f;
+  color: white;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-back a {
+  margin-top: 10px;
+  color: #00d8ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-back a:hover {
+  text-decoration: underline;
+}
+
