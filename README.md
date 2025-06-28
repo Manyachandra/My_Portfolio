@@ -1,6 +1,6 @@
 # 💼 My Portfolio Website
 
-Welcome to my **Personal Portfolio Website**, a fully responsive and web application showcasing my skills, projects, experience, and contact information. This project was built with **React.js**, styled using **CSS and designed to be both visually appealing and user-friendly.
+Welcome to my **Personal Portfolio Website**, a fully responsive and web application showcasing my skills, projects, experience, and contact information. This project was built with **React.js**, styled using **CSS** and featuring a functional contact form via **EmailJS**, and deployed seamlessly using Vercel designed to be both visually appealing and user-friendly.
 
 ## 🌐 Live Demo
 
