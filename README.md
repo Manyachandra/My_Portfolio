@@ -6,27 +6,6 @@ Welcome to my **Personal Portfolio Website**, a fully responsive and web applica
 
 🔗 [Visit the Live Website](https://my-portfolio-manyachandras-projects.vercel.app/home)
 
-## 📁 Folder Structure
-
-portfolio/
-├── public/
-│ └── assets/ # Images, logos, icons
-├── src/
-│ ├── assets/ # Additional static content
-│ ├── components/ # Navbar, Footer, reusable components
-│ ├── pages/ # Core pages of the website
-│ │ ├── Home.jsx
-│ │ ├── About.jsx
-│ │ ├── Experience.jsx
-│ │ ├── Projects.jsx
-│ │ ├── TechSkills.jsx
-│ │ └── Contact.jsx
-│ ├── App.jsx # Main app with routing
-│ └── main.jsx # React root render
-├── .gitignore
-├── package.json
-└── README.md
-
 ## 🚀 Features
 
 - ✨ Smooth, responsive layout with animated transitions
