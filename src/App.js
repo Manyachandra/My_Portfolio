@@ -685,7 +685,6 @@
 
 // export default App;
 
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import futuristicVideo from './assests/mixkit-animation-of-futuristic-devices-99786-hd-ready.mp4';
@@ -781,26 +780,25 @@ function App() {
   return (
     <Router>
       <div className="app-container">
+        {/* Background video */}
         <video className="background-video" autoPlay loop muted>
           <source src={futuristicVideo} type="video/mp4" />
         </video>
 
-        {/* ✅ Responsive Navbar */}
+        {/* Navigation */}
         {isMobile ? (
           <>
             <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
               ☰
             </div>
-            {menuOpen && (
-              <div className="mobile-menu">
-                <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-                <Link to="/experience" onClick={() => setMenuOpen(false)}>Experience</Link>
-                <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-                <Link to="/TechSkills" onClick={() => setMenuOpen(false)}>TechSkills</Link>
-                <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-              </div>
-            )}
+            <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+              <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link to="/experience" onClick={() => setMenuOpen(false)}>Experience</Link>
+              <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+              <Link to="/TechSkills" onClick={() => setMenuOpen(false)}>TechSkills</Link>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+            </div>
           </>
         ) : (
           <nav className="navbar">
@@ -813,6 +811,7 @@ function App() {
           </nav>
         )}
 
+        {/* Routes */}
         <div className="content">
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />

@@ -23,17 +23,15 @@ body {
 .app-container {
   position: relative;
   min-height: 100vh;
-  padding-top: 0;
-  margin-top: 0;
 }
 
-/* === Navigation Bar (Desktop) === */
+/* === Navbar (Desktop) === */
 .navbar {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   gap: 2rem;
-  padding: 1rem 0;
-  padding-left: 1cm;
+  padding: 1rem;
+  padding-left: 2rem;
   background-color: rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
@@ -41,7 +39,6 @@ body {
 }
 
 .navbar a {
-  margin-right: 10px;
   text-decoration: none;
   color: #00d8ff;
   font-weight: bold;
@@ -54,7 +51,7 @@ body {
   text-shadow: 0 0 10px #00f0ff;
 }
 
-/* === Hamburger Icon (Mobile Only) === */
+/* === Hamburger Icon (Mobile) === */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -66,33 +63,30 @@ body {
   z-index: 999;
   color: #00d8ff;
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 /* === Mobile Sidebar Menu === */
 .mobile-menu {
   display: none;
-}
-
-.mobile-menu.active {
-  display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px;
+  width: 240px;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
-  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.96);
+  padding: 3rem 1.5rem;
   gap: 1.5rem;
   z-index: 998;
+  transition: transform 0.3s ease;
 }
 
 .mobile-menu a {
   color: #00d8ff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .mobile-menu a:hover {
@@ -100,7 +94,11 @@ body {
   text-shadow: 0 0 10px #00f0ff;
 }
 
-/* === Home Section Layout === */
+.mobile-menu.active {
+  display: flex;
+}
+
+/* === Home Section === */
 .home-wrapper {
   display: flex;
   justify-content: center;
@@ -109,14 +107,12 @@ body {
   padding: 0 2rem;
   gap: 3rem;
   flex-wrap: wrap;
-  color: white;
   text-align: center;
-  overflow: hidden;
   position: relative;
   top: -40px;
 }
 
-/* === Text Section === */
+/* === Home Text === */
 .home-text {
   max-width: 500px;
 }
@@ -140,8 +136,8 @@ body {
   color: #00d8ff;
 }
 
-/* === Profile Picture === */
-.home-image .profile-pic {
+/* === Profile Image === */
+.profile-pic {
   width: 230px;
   height: 230px;
   object-fit: cover;
@@ -150,7 +146,7 @@ body {
   box-shadow: 0 0 25px #00f0ff, 0 0 45px #ff00f7;
 }
 
-/* === Icon Section === */
+/* === Social Icons === */
 .icon-container {
   margin-top: 1.5rem;
   display: flex;
@@ -167,17 +163,10 @@ body {
   animation: iconFall 1s ease forwards;
 }
 
-.falling-icon:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.falling-icon:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.falling-icon:nth-child(3) {
-  animation-delay: 0.6s;
-}
+.falling-icon:nth-child(1) { animation-delay: 0.2s; }
+.falling-icon:nth-child(2) { animation-delay: 0.4s; }
+.falling-icon:nth-child(3) { animation-delay: 0.6s; }
 
-/* === Keyframes === */
 @keyframes iconFall {
   0% {
     transform: translateX(-100px) translateY(-100px);
@@ -190,15 +179,12 @@ body {
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
-/* === Content Wrapper === */
+/* === Page Content Wrapper === */
 .content {
   padding: 2rem;
-  color: white;
 }
 
 /* === Contact Form === */
@@ -209,8 +195,7 @@ form {
   flex-direction: column;
 }
 
-input,
-textarea {
+input, textarea {
   margin-bottom: 10px;
   padding: 10px;
   font-size: 1em;
@@ -240,7 +225,6 @@ button:hover {
   align-items: flex-start;
   min-height: 100vh;
   padding: 100px 20px 60px;
-  color: white;
 }
 
 .about-content {
@@ -263,7 +247,7 @@ button:hover {
   margin-bottom: 40px;
 }
 
-/* === Cards === */
+/* === Role Cards === */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -285,69 +269,37 @@ button:hover {
   transform: translateY(-10px);
 }
 
-.card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
-}
-
 .card h3 {
   color: white;
 }
 
-/* === 📱 Mobile Responsive === */
+/* === Responsive (Mobile) === */
 @media (max-width: 768px) {
-  .navbar {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: none;
-  }
-
-  .mobile-menu.active {
-    display: flex;
-  }
+  .navbar { display: none; }
+  .hamburger { display: block; }
 
   .home-wrapper {
     flex-direction: column;
-    align-items: center;
     padding: 2rem 1rem;
-    gap: 2rem;
     top: -20px;
   }
 
-  .home-text h1 {
-    font-size: 2rem;
-  }
+  .home-text h1 { font-size: 2rem; }
+  .home-text h2 { font-size: 1.4rem; }
+  .home-text h3 { font-size: 1.1rem; }
 
-  .home-text h2 {
-    font-size: 1.4rem;
-  }
-
-  .home-text h3 {
-    font-size: 1.1rem;
-  }
-
-  .home-image .profile-pic {
+  .profile-pic {
     width: 180px;
     height: 180px;
   }
 
   .about-section {
-    padding: 60px 15px 40px;
     flex-direction: column;
     align-items: center;
+    padding: 60px 15px 40px;
   }
 
-  .about-content h2 {
-    font-size: 2rem;
-  }
-
+  .about-content h2 { font-size: 2rem; }
   .about-content p {
     font-size: 1rem;
     line-height: 1.6;
@@ -358,23 +310,12 @@ button:hover {
     max-width: 300px;
   }
 
-  .card img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .card h3 {
-    font-size: 1rem;
-  }
-
   form {
     width: 100%;
     padding: 0 1rem;
   }
 
-  input,
-  textarea,
-  button {
+  input, textarea, button {
     font-size: 1rem;
     width: 100%;
   }
