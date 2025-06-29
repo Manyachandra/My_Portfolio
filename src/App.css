@@ -8,8 +8,6 @@ body {
   color: white;
 }
 
-
-
 /* === Background Video === */
 .background-video {
   position: fixed;
@@ -27,7 +25,7 @@ body {
   justify-content: left;
   gap: 2rem;
   padding: 1rem 0;
-  padding-left: 1cm; /* ✅ Adds 1cm gap at the start */
+  padding-left: 1cm;
   background-color: rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
@@ -42,7 +40,6 @@ body {
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
-
 
 .navbar a:hover {
   color: white;
@@ -61,13 +58,16 @@ body {
 .home-wrapper {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* moves content up */
-  min-height: calc(100vh - 80px); /* adjust based on navbar height */
-  padding: 2rem 2rem 1rem; /* reduce top & bottom padding */
+  align-items: center;
+  height: 100vh;
+  padding: 0 2rem;
   gap: 3rem;
   flex-wrap: wrap;
   color: white;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  top: -40px;
 }
 
 /* === Text Section === */
@@ -124,11 +124,9 @@ body {
 .falling-icon:nth-child(1) {
   animation-delay: 0.2s;
 }
-
 .falling-icon:nth-child(2) {
   animation-delay: 0.4s;
 }
-
 .falling-icon:nth-child(3) {
   animation-delay: 0.6s;
 }
@@ -188,23 +186,8 @@ button:hover {
   background-color: #00a4cc;
   color: white;
 }
-.home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 0 2rem;
-  gap: 3rem;
-  flex-wrap: wrap;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  top: -40px; /* Shift content slightly upward */
-}
 
-
-
+/* === About Section === */
 .about-section {
   display: flex;
   justify-content: center;
@@ -234,6 +217,7 @@ button:hover {
   margin-bottom: 40px;
 }
 
+/* === Cards === */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -265,5 +249,82 @@ button:hover {
   color: white;
 }
 
+/* === 📱 Mobile Responsiveness === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    gap: 1rem;
+  }
 
+  .navbar a {
+    font-size: 1rem;
+  }
 
+  .home-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    top: -20px;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .home-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .home-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .home-image .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-section {
+    padding: 60px 15px 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 1rem;
+    width: 100%;
+  }
+}

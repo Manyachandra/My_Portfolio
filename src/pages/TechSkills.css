@@ -68,6 +68,7 @@
 .slide-right {
   animation-name: slideInRight;
 }
+
 .stack-name {
   color: aqua;
   font-size: 1rem;
@@ -76,4 +77,46 @@
 
 .aqua-text {
   color: aqua;
+}
+
+/* ✅ FINAL STYLES FOR BOXES */
+.techskills-boxes {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tech-box {
+  background-color: #111111; /* solid dark */
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  color: white;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.tech-box h3 {
+  color: #00ffff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.tech-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-box ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
 }
