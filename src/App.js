@@ -567,125 +567,8 @@
 
 // src/App.js
 
-//correct code
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-// import futuristicVideo from './assests/mixkit-animation-of-futuristic-devices-99786-hd-ready.mp4';
-// import profileImage from './assests/Portfoliopic.jpg';
-// import githubIcon from './assests/icons8-github-50.png';
-// import gmailIcon from './assests/icons8-gmail-48.png';
-// import linkedinIcon from './assests/icons8-linkedin-48.png';
 
-// import './App.css';
-// import Contact from './pages/contact';
-// import TechSkills from './pages/TechSkills';
-// import ProjectCard from './pages/ProjectCard';
-// import Experience from './pages/Experience'; // ✅ Correct usage here
-
-// function Home() {
-//   return (
-//     <div className="home-wrapper">
-//       <div className="home-text">
-//         <h2>Hello, It's Me</h2>
-//         <h1>Manya Chandra</h1>
-//         <h3>And I'm a <span className="highlight">Full Stack Developer</span></h3>
-//         <p>"I am a web designer and a machine learning enthusiast."</p>
-//         <div className="icon-container">
-//           <a href="https://github.com/Manyachandra" target="_blank" rel="noopener noreferrer">
-//             <img src={githubIcon} alt="GitHub" className="falling-icon" />
-//           </a>
-//           <a href="mailto:your.email@example.com">
-//             <img src={gmailIcon} alt="Gmail" className="falling-icon" />
-//           </a>
-//           <a href="https://www.linkedin.com/in/manyachandra8/" target="_blank" rel="noopener noreferrer">
-//             <img src={linkedinIcon} alt="LinkedIn" className="falling-icon" />
-//           </a>
-//         </div>
-//       </div>
-//       <div className="home-image">
-//         <img src={profileImage} alt="Profile" className="profile-pic" />
-//       </div>
-//     </div>
-//   );
-// }
-
-// function About() {
-//   return (
-//     <section className="about-section">
-//       <div className="about-content">
-//         <h2>About <span className="highlight">ME.</span></h2>
-//         <p>
-//           I'm a final year student at NIT Patna pursuing Computer Science and Engineering.
-//           I am a full-stack web developer with expertise in frameworks like React and Node.js.
-//           I am also a ML enthusiast. Let's work together to solve some real-world problems!
-//         </p>
-//         <div className="cards">
-//           <div className="card"><h3>Web Developer</h3></div>
-//           <div className="card"><h3>Frontend Developer</h3></div>
-//           <div className="card"><h3>Backend Developer</h3></div>
-//           <div className="card"><h3>ML Enthusiast</h3></div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// function Projects() {
-//   return (
-//     <section className="projects-section">
-//       <h2 className="projects-title">My Projects</h2>
-//       <div className="projects-container">
-//         <ProjectCard
-//           name="ClubHub"
-//           description="Created an official platform providing comprehensive information on upcoming, current, and past events organized by 10+ clubs of NIT Patna."
-//           github="https://github.com/Manyachandra/NITP-ClubHub"
-//         />
-//         <ProjectCard
-//           name="Travel Diaries"
-//           description="A web application for traveler and blogger content in 4 formats: text, audio, video, and pictures."
-//           github="https://github.com/Manyachandra/travelDiaries"
-//         />
-//       </div>
-//     </section>
-//   );
-// }
-
-// function App() {
-//   return (
-//     <Router>
-//       <div className="app-container">
-//         <video className="background-video" autoPlay loop muted>
-//           <source src={futuristicVideo} type="video/mp4" />
-//         </video>
-
-//         <nav className="navbar">
-//           <Link to="/home">Home</Link>
-//           <Link to="/about">About</Link>
-//           <Link to="/experience">Experience</Link>
-//           <Link to="/projects">Projects</Link>
-//           <Link to="/TechSkills">TechSkills</Link>
-//           <Link to="/contact">Contact</Link>
-//         </nav>
-
-//         <div className="content">
-//           <Routes>
-//             <Route path="/" element={<Navigate to="/home" />} />
-//             <Route path="/home" element={<Home />} />
-//             <Route path="/about" element={<About />} />
-//             <Route path="/experience" element={<Experience />} /> {/* ✅ FIXED */}
-//             <Route path="/projects" element={<Projects />} />
-//             <Route path="/TechSkills" element={<TechSkills />} />
-//             <Route path="/contact" element={<Contact />} />
-//           </Routes>
-//         </div>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import futuristicVideo from './assests/mixkit-animation-of-futuristic-devices-99786-hd-ready.mp4';
 import profileImage from './assests/Portfoliopic.jpg';
@@ -697,7 +580,7 @@ import './App.css';
 import Contact from './pages/contact';
 import TechSkills from './pages/TechSkills';
 import ProjectCard from './pages/ProjectCard';
-import Experience from './pages/Experience';
+import Experience from './pages/Experience'; // ✅ Correct usage here
 
 function Home() {
   return (
@@ -768,56 +651,28 @@ function Projects() {
 }
 
 function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <Router>
       <div className="app-container">
-        {/* Background video */}
         <video className="background-video" autoPlay loop muted>
           <source src={futuristicVideo} type="video/mp4" />
         </video>
 
-        {/* Navigation */}
-        {isMobile ? (
-          <>
-            <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-              ☰
-            </div>
-            <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-              <Link to="/home" onClick={() => setMenuOpen(false)}>Home</Link>
-              <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link to="/experience" onClick={() => setMenuOpen(false)}>Experience</Link>
-              <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-              <Link to="/TechSkills" onClick={() => setMenuOpen(false)}>TechSkills</Link>
-              <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-            </div>
-          </>
-        ) : (
-          <nav className="navbar">
-            <Link to="/home">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/experience">Experience</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/TechSkills">TechSkills</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
-        )}
+        <nav className="navbar">
+          <Link to="/home">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/experience">Experience</Link>
+          <Link to="/projects">Projects</Link>
+          <Link to="/TechSkills">TechSkills</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
 
-        {/* Routes */}
         <div className="content">
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />} />
+            <Route path="/experience" element={<Experience />} /> {/* ✅ FIXED */}
             <Route path="/projects" element={<Projects />} />
             <Route path="/TechSkills" element={<TechSkills />} />
             <Route path="/contact" element={<Contact />} />
