@@ -9,19 +9,23 @@ Welcome to my **Personal Portfolio Website**, a fully responsive and web applica
 ## 🚀 Features
 
 - ✨ Smooth, responsive layout with animated transitions
+- 🤖 **AI Chatbot Assistant** to answer questions about my skills, experience, and resume and many more  
 - 🗂️ Project section with cards and external links
 - 📚 Timeline-based **Experience** page
 - 💼 Tech stack section with icons and hover effects
-- 📬 Contact form with email submission
+- 📬 Contact form with emailJS integration
+- 📱 **Fully responsive design for mobile and tablet views** 
 
   ## 🛠️ Built With
 
-- **React.js** – Frontend library
-- **React Router** – Page navigation
-- **CSS** – Styling
-- **Framer Motion** – Animation libraries (if used)
-- **EmailJS** – (for form submission if configured)
-- **Vercel** – Deployment
+- **React.js** – Frontend library  
+- **React Router** – Page navigation  
+- **CSS** – Styling  
+- **Framer Motion** – Smooth animations  
+- **EmailJS** – Contact form submissions  
+- **Vercel** – Deployment  
+- **Custom Chatbot** (with fuzzy question matching)
+
 ## ⚙️ Getting Started Locally
 
 **📩 Contact**
