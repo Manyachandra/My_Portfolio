@@ -1,21 +1,17 @@
-/* src/pages/About.css */
+/* About.css */
+
 .about-section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  background-image: url("../assets/about-bg.png"); /* if you have a background image */
-  background-size: cover;
-  background-position: center;
-  padding-top: 60px; /* adjust to lift content higher */
-  padding-bottom: 40px;
+  padding: 100px 20px 60px;
   color: white;
 }
 
 .about-content {
-  max-width: 1000px;
+  max-width: 900px;
   text-align: center;
-  padding: 0 20px;
 }
 
 .about-content h2 {
@@ -30,21 +26,40 @@
 .about-content p {
   font-size: 1.1rem;
   line-height: 1.8;
+  margin-bottom: 30px;
 }
 
+/* ✅ Resume Button Styling */
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #00c3cc;
+  color: white;
+}
+
+/* Cards Grid */
 .cards {
-  margin-top: 50px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
 .card {
-  background: #121212;
+  background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 12px;
-  width: 220px;
+  width: 200px;
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
   text-align: center;
   transition: transform 0.3s ease;
@@ -57,10 +72,47 @@
 .card img {
   width: 60px;
   height: 60px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
   color: white;
   font-size: 1.1rem;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 15px 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .resume-btn {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
 }

@@ -580,7 +580,8 @@ import './App.css';
 import Contact from './pages/contact';
 import TechSkills from './pages/TechSkills';
 import ProjectCard from './pages/ProjectCard';
-import Experience from './pages/Experience'; // ✅ Correct usage here
+import Experience from './pages/Experience';
+import Chatbot from './pages/Chatbot'; // ✅ Add this line
 
 function Home() {
   return (
@@ -672,12 +673,14 @@ function App() {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />} /> {/* ✅ FIXED */}
+            <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/TechSkills" element={<TechSkills />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
+
+        <Chatbot /> {/* ✅ Chatbot added at bottom of layout */}
       </div>
     </Router>
   );
