@@ -28,26 +28,23 @@ Welcome to my **Personal Portfolio Website**, a fully responsive and web applica
 
 ## ⚙️ Getting Started Locally
 
-**📩 Contact**
-
-You can reach me through the Contact section on the website, or directly via:
-
-📧 Email: chandramanya78@gmail.com
-💼 LinkedIn : https://www.linkedin.com/in/manyachandra8/
-
-
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/portfolio.git
+git clone https://github.com/Manyachandra/My_Portfolio.git
 
 # 2. Move into the project folder
-cd portfolio
+cd My_Portfolio
 
 # 3. Install dependencies
 npm install
 
 # 4. Start the development server
-npm run dev
+npm start
+```
 
+## 📩 Contact
 
+You can reach me through the Contact section on the website, or directly via:
 
+📧 Email: chandramanya78@gmail.com
+💼 LinkedIn: https://www.linkedin.com/in/manyachandra8/
